@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- 1. META VIEWPORT WAJIB (Wajib untuk Responsif) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <!-- SEO & OPEN GRAPH -->
+    <title>Travel Mobil Indramayu Jakarta Bekasi Tangerang Bogor Cikarang Karawang Bandara Soekarno Hatta | Door to Door
+        24 Jam</title>
+    <meta name="description"
+        content="Travel Rizky menyediakan layanan mobil antar jemput door to door 24 jam dari Indramayu ke Jakarta, Bekasi, Tangerang, Bogor, Cikarang, Karawang, dan Bandara Soekarno Hatta. Pengalaman 10+ tahun, driver profesional, harga promo mulai Rp150.000. Pesan tiket sekarang!" />
+    <meta property="og:title" content="Travel Mobil Indramayu Jakarta - Door to Door 24 Jam | Travel Rizky">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1200">
+
+    <!-- FONTS & ICONS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            blue: '#0f172a',
+                            light: '#334155',
+                            gold: '#d4af37',
+                            goldHover: '#fbbf24',
+                            bg: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'modal-pop': 'modalPop 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+                        'aurora': 'aurora 20s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        modalPop: {
+                            '0%': { transform: 'scale(0.9) translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'scale(1) translateY(0)', opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        aurora: {
+                            '0%': { transform: 'translate(0%, 0%)' },
+                            '100%': { transform: 'translate(10%, -10%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* --- CSS CUSTOM (TERMASUK SCROLL SNAP) --- */
+
+        /* 1. SCROLL PROGRESS BAR */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            height: 3px;
+            background: transparent;
+            width: 100%;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #d4af37, #fbbf24);
+            width: 0%;
+            transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* 2. AURORA BACKGROUND (GLASSMORPHISM BASE) */
+        .bg-aurora {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+            background: #f8fafc;
+        }
+
+        .bg-aurora::before,
+        .bg-aurora::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: aurora 20s ease-in-out infinite alternate;
+        }
+
+        .bg-aurora::before {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.3), transparent);
+            top: -100px;
+            left: -100px;
+        }
+
+        .bg-aurora::after {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(15, 23, 42, 0.15), transparent);
+            bottom: -50px;
+            right: -50px;
+            animation-delay: -10s;
+        }
+
+        .dark .bg-aurora {
+            background: #0f172a;
+        }
+
+        .dark .bg-aurora::before {
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent);
+        }
+
+        .dark .bg-aurora::after {
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.1), transparent);
+        }
+
+        /* 3. GLASSMORPHISM CARDS */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* 4. SCROLL REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 5. SLIDER ANIMATION */
+        .slide {
+            transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            z-index: 1;
+            position: absolute;
+            inset: 0;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 10;
+            position: relative;
+        }
+
+        /* 6. 3D TILT & BUTTONS */
+        .perspective-container {
+            perspective: 1000px;
+        }
+
+        .card-3d {
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            transform-style: preserve-3d;
+        }
+
+        @media (min-width: 768px) {
+            .card-3d:hover {
+                transform: translateY(-8px) rotateX(2deg);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .card-3d:active {
+                transform: scale(0.98);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                transition: transform 0.1s ease-out;
+            }
+        }
+
+        .btn-luxury {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .btn-luxury:active {
+            transform: scale(0.95);
+        }
+
+        /* 7. MOBILE MENU */
+        .mobile-menu {
+            transform: translateX(100%) scale(0.95);
+            opacity: 0;
+            pointer-events: none;
+            background-color: rgba(15, 23, 42, 0);
+            backdrop-filter: blur(0px);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, backdrop-filter 0.5s ease;
+        }
+
+        .mobile-menu.is-open {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            pointer-events: all;
+            background-color: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(25px);
+        }
+
+        .mobile-link {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease-out, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .mobile-menu.is-open .mobile-link:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .mobile-menu.is-open .mobile-link:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .mobile-menu.is-open .mobile-link:nth-child(3) {
+            transition-delay: 0.15s;
+        }
+
+        .mobile-menu.is-open .mobile-link:nth-child(4) {
+            transition-delay: 0.2s;
+        }
+
+        .mobile-menu.is-open .mobile-link:nth-child(5) {
+            transition-delay: 0.25s;
+        }
+
+        .mobile-menu.is-open .mobile-link {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .close-btn-rotate {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .mobile-menu.is-open .close-btn-rotate {
+            transform: rotate(90deg);
+        }
+
+        /* 8. FLEET SLIDER HORIZONTAL (SCROLL SNAP) */
+        /* Ini adalah perubahan utama dari Slider biasa */
+        .fleet-slider-container {
+            /* Menghilangkan overflow hidden agar scroll terlihat dan native */
+            overflow-x: auto;
+            /* Scroll Snap Logic (Mandatory & Proximity) */
+            scroll-snap-type: x mandatory;
+            scroll-snap-stop: always;
+            scroll-behavior: smooth;
+            position: relative;
+            padding-bottom: 20px;
+            /* Padding untuk scrollbar */
+
+            /* Sembunyikan scrollbar agar terlihat bersih, tapi tetap bisa discroll */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .fleet-slider-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .fleet-track {
+            /* Flexbox layout */
+            display: flex;
+            gap: 20px;
+            /* Jarak antar kartu */
+            padding: 0 20px;
+            /* Padding agar kartu pinggir tidak ketemu ujung container */
+            width: max-content;
+            /* Lebar konten menyesuaikan isi */
+        }
+
+        .fleet-card {
+            /* Snap Logic pada setiap kartu */
+            scroll-snap-align: start;
+            /* Ukuran Kartu Fleksibel */
+            width: 320px;
+            flex-shrink: 0;
+            /* Jangan mengecil */
+        }
+
+        /* --- MEDIA QUERY (Mobile Adjustment) --- */
+        @media (max-width: 767px) {
+            .hero-title-mobile {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+        }
+
+        /* Text Helper */
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+
+    <!-- SCHEMA ORG -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "name": "Travel Rizky - Travel Mobil Indramayu",
+          "telephone": "083893843963",
+          "priceRange": "Rp150.000 - Rp350.000",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Blok Kesambi Desa Gabuswetan",
+            "addressLocality": "Indramayu",
+            "addressRegion": "Jawa Barat",
+            "addressCountry": "ID"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="flex flex-col min-h-screen font-sans text-slate-800">
+
+    <!-- BACKGROUND -->
+    <div class="bg-aurora"></div>
+
+    <!-- SCROLL PROGRESS BAR -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar"
+        class="fixed w-full z-30 transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) bg-white/70 backdrop-blur-md py-4 shadow-sm dark:bg-slate-900/70 dark:text-white border-b border-white/20 dark:border-white/10">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" onclick="route('home')" class="flex items-center gap-3 group perspective-container">
+                <div
+                    class="w-12 h-12 bg-luxury-gold rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300 card-3d relative overflow-hidden">
+                    <div class="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span class="font-serif font-bold text-xl relative z-10">TR</span>
+                </div>
+                <div>
+                    <h1
+                        class="text-xl font-serif font-bold text-luxury-blue leading-none tracking-wide dark:text-white transition-colors duration-300">
+                        RIZKY</h1>
+                    <span
+                        class="text-xs tracking-widest text-gray-500 uppercase font-semibold dark:text-gray-400">Travel</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <!-- Jam Digital -->
+                <div
+                    class="hidden lg:flex flex-col items-end px-3 py-1 glass-card rounded-lg transition-all duration-300 hover:shadow-md">
+                    <span class="text-xs font-bold text-luxury-blue dark:text-luxury-gold"
+                        id="greeting-text">Selamat</span>
+                    <span class="text-sm font-mono font-semibold text-gray-600 dark:text-gray-300"
+                        id="clock">00:00:00</span>
+                </div>
+
+                <a href="#" onclick="route('home')" id="nav-home"
+                    class="nav-link text-sm font-semibold text-gray-600 hover:text-luxury-gold transition-all duration-300 relative group">
+                    Beranda
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-luxury-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#features" onclick="route('home')"
+                    class="nav-link text-sm font-semibold text-gray-600 hover:text-luxury-gold transition-all duration-300 relative group">
+                    Keunggulan
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-luxury-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" onclick="route('routes-page')" id="nav-routes"
+                    class="nav-link text-sm font-semibold text-gray-600 hover:text-luxury-gold transition-all duration-300 relative group">
+                    Rute & Harga
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-luxury-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#fleet" onclick="route('home')" id="nav-fleet"
+                    class="nav-link text-sm font-semibold text-gray-600 hover:text-luxury-gold transition-all duration-300 relative group">
+                    Armada
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-luxury-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+
+                <button onclick="toggleTheme()"
+                    class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-luxury-blue dark:text-yellow-400 hover:bg-luxury-gold hover:text-white btn-luxury transition-all border border-gray-200/50 dark:border-gray-700/50">
+                    <i id="theme-icon" class="fas fa-moon"></i>
+                </button>
+
+                <a href="#" onclick="route('booking-page')"
+                    class="px-6 py-2.5 text-sm font-bold text-white bg-luxury-blue rounded-full btn-luxury shadow-md hover:bg-luxury-light transition-colors relative overflow-hidden group">
+                    <span class="relative z-10">Pesan Sekarang</span>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700">
+                    </div>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-3 md:hidden">
+                <button onclick="toggleTheme()"
+                    class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-luxury-blue dark:text-yellow-400 hover:bg-luxury-gold hover:text-white btn-luxury transition-all border border-gray-200/50">
+                    <i id="theme-icon-mobile" class="fas fa-moon"></i>
+                </button>
+                <button class="text-2xl text-luxury-blue dark:text-white focus:outline-none" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] flex flex-col justify-center items-center space-y-8">
+        <button class="absolute top-8 right-8 text-3xl text-white/80 hover:text-white close-btn-rotate"
+            onclick="toggleMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#" onclick="route('home'); toggleMenu()"
+            class="mobile-link text-2xl font-serif font-bold text-white">Beranda</a>
+        <a href="#features" onclick="route('home'); toggleMenu()"
+            class="mobile-link text-2xl font-serif font-bold text-white">Keunggulan</a>
+        <a href="#" onclick="route('routes-page'); toggleMenu()"
+            class="mobile-link text-2xl font-serif font-bold text-white">Rute & Harga</a>
+        <a href="#fleet" onclick="route('home'); toggleMenu()"
+            class="mobile-link text-2xl font-serif font-bold text-white">Armada</a>
+        <a href="#" onclick="route('booking-page'); toggleMenu()"
+            class="mobile-link px-8 py-3 text-xl font-bold text-white bg-luxury-gold rounded-full shadow-lg">Pesan
+            Sekarang</a>
+    </div>
+
+    <!-- PAGE 1: HOME -->
+    <div id="home" class="page-section w-full">
+        <!-- HERO SLIDER -->
+        <header id="hero-home" class="relative h-[500px] md:h-[70vh] bg-luxury-blue overflow-hidden">
+            <!-- Slide 1 -->
+            <div class="slide active w-full h-full bg-cover bg-center"
+                style="background-image: url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1920&auto=format&fit=crop');">
+                <div class="absolute inset-0 bg-gradient-to-t from-luxury-blue/95 via-luxury-blue/40 to-transparent">
+                </div>
+                <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
+                    <span
+                        class="inline-block py-1 px-3 border border-luxury-gold text-luxury-gold text-xs font-bold tracking-widest mb-4 rounded-full glass-card animate-pulse perspective-container card-3d backdrop-blur-md">PARTNER
+                        PERJALANAN PREMIUM</span>
+                    <h1 class="text-3xl md:text-7xl font-serif font-bold text-white mb-6 drop-shadow-lg leading-tight animate-fade-in-up hero-title-mobile"
+                        style="animation-delay: 0.1s;">
+                        Nikmati Perjalanan,<br>Bersama Travel Rizky
+                    </h1>
+                    <p class="text-base md:text-xl font-light max-w-2xl mx-auto mb-10 text-gray-200 animate-fade-in-up"
+                        style="animation-delay: 0.2s;">
+                        Saksikan keindahan Indonesia dengan pelayanan kelas dunia.
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-4 justify-center w-full md:w-auto animate-fade-in-up"
+                        style="animation-delay: 0.3s;">
+                        <a href="#" onclick="route('booking-page')"
+                            class="w-full md:w-auto px-8 py-3.5 bg-luxury-gold text-white font-bold rounded-full shadow-[0_4px_15px_rgba(212,175,55,0.4)] hover:shadow-[0_10px_25px_rgba(212,175,55,0.6)] transition-all btn-luxury hover:-translate-y-1 hover:bg-luxury-goldHover">Pesan
+                            Tiket</a>
+                        <a href="#fleet"
+                            class="w-full md:w-auto px-8 py-3.5 border-2 border-white text-white font-bold rounded-full hover:bg-white/10 hover:text-white transition-all btn-luxury backdrop-blur-sm">Lihat
+                            Armada</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide w-full h-full bg-cover bg-center"
+                style="background-image: url('https://images.unsplash.com/photo-1544620347-b0e754b5a8e6?q=80&w=1920&auto=format&fit=crop');">
+                <div class="absolute inset-0 bg-gradient-to-t from-luxury-blue/95 via-luxury-blue/40 to-transparent">
+                </div>
+                <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
+                    <span
+                        class="inline-block py-1 px-3 border border-luxury-gold text-luxury-gold text-xs font-bold tracking-widest mb-4 rounded-full glass-card animate-pulse perspective-container card-3d backdrop-blur-md">PENGALAMAN
+                        TAK TERLUPA</span>
+                    <h1
+                        class="text-3xl md:text-7xl font-serif font-bold text-white mb-6 drop-shadow-lg leading-tight animate-fade-in-up hero-title-mobile">
+                        Perjalanan Liburan,<br>Selamanya Dikenang</h1>
+                    <p class="text-base md:text-xl font-light max-w-2xl mx-auto mb-10 text-gray-200 animate-fade-in-up">
+                        Ciptakan kenangan indah bersama keluarga dan teman. Kami menjamin kepuasan.</p>
+                    <div class="flex flex-col md:flex-row gap-4 justify-center w-full md:w-auto animate-fade-in-up">
+                        <a href="#" onclick="route('booking-page')"
+                            class="w-full md:w-auto px-8 py-3.5 bg-luxury-gold text-white font-bold rounded-full shadow-[0_4px_15px_rgba(212,175,55,0.4)] hover:shadow-[0_10px_25px_rgba(212,175,55,0.6)] transition-all btn-luxury hover:-translate-y-1 hover:bg-luxury-goldHover">Cari
+                            Rute</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide w-full h-full bg-cover bg-center"
+                style="background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1920&auto=format&fit=crop');">
+                <div class="absolute inset-0 bg-gradient-to-t from-luxury-blue/95 via-luxury-blue/40 to-transparent">
+                </div>
+                <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
+                    <span
+                        class="inline-block py-1 px-3 border border-luxury-gold text-luxury-gold text-xs font-bold tracking-widest mb-4 rounded-full glass-card animate-pulse perspective-container card-3d backdrop-blur-md">ARMADA
+                        MODERN & BERSIH</span>
+                    <h1
+                        class="text-3xl md:text-7xl font-serif font-bold text-white mb-6 drop-shadow-lg leading-tight animate-fade-in-up hero-title-mobile">
+                        Standar Keamanan,<br>Dan Kesehatan Tinggi</h1>
+                    <p class="text-base md:text-xl font-light max-w-2xl mx-auto mb-10 text-gray-200 animate-fade-in-up">
+                        Menjelajahi jarak jauh tidak lagi melelahkan. Nikmati kenyamanan.</p>
+                </div>
+            </div>
+
+            <!-- Slider Controls -->
+            <div class="absolute bottom-5 left-0 w-full flex justify-center gap-3 z-20">
+                <button onclick="changeSlide(0)"
+                    class="slider-dot w-2.5 h-2.5 rounded-full border-2 border-white/50 hover:bg-luxury-gold hover:border-luxury-gold transition-all"></button>
+            </div>
+        </header>
+
+        <!-- INFO BOX -->
+        <section
+            class="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border-b border-white/20 dark:border-gray-800 py-6 relative z-20">
+            <div class="container mx-auto px-4">
+                <div
+                    class="glass-card bg-blue-50/50 dark:bg-blue-900/20 border-l-4 border-luxury-gold p-6 rounded-r-lg transition-all duration-500 hover:shadow-xl shadow-luxury-blue/5">
+                    <h2 class="text-lg font-bold text-luxury-blue dark:text-white mb-2">Layanan Travel Mobil Indramayu &
+                        Sekitarnya</h2>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Travel Rizky menyediakan layanan <strong>antar jemput door to door 24 jam</strong> dari Indramayu ke Jakarta, Bekasi, Tangerang, Bogor, Cikarang, Karawang, dan Bandara Soekarno Hatta. Didukung armada HiAce & Alphad serta driver berpengalaman. Harga tiket mulai <strong>Rp150.000</strong> hingga Rp350.000. Kami mengutamakan keamanan, kenyamanan, dan ketepatan waktu untuk setiap perjalanan Anda.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="bg-white/30 dark:bg-gray-900/30 py-12 md:py-20 relative z-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <span class="text-luxury-gold text-sm font-bold tracking-widest uppercase">Layanan Eksekutif</span>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-luxury-blue dark:text-white mb-4">
+                        Mobilitas Eksklusif untuk Para Pengambil Keputusan</h2>
+                    <div class="w-20 h-1 bg-luxury-gold mx-auto"></div>
+                    <p class="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto"> Kami memahami bahwa waktu adalah
+                        aset berharga bagi para pemimpin dan profesional.
+                        Setiap perjalanan kami kelola dengan presisi, etika, dan perhatian penuh terhadap detail.</p>
+                    <div class="flex justify-center gap-4 mt-8">
+                        <a href="#" onclick="route('booking-page')"
+                            class="px-6 py-2.5 bg-luxury-blue dark:bg-luxury-light text-white text-sm font-bold rounded-full shadow-md hover:bg-luxury-light btn-luxury transition-colors">Atur
+                            Perjalanan</a>
+                        <a href="https://wa.me/6283893843963"
+                            class="px-6 py-2.5 border border-luxury-blue text-luxury-blue dark:text-white dark:border-white text-sm font-bold rounded-full hover:bg-luxury-blue hover:text-white btn-luxury transition-colors">Konsultasi</a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+                    <div
+                        class="glass-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 card-3d reveal">
+                        <h3 class="text-lg font-serif font-bold text-luxury-blue dark:text-white mb-2">Executive Charter
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Layanan kendaraan eksklusif untuk agenda
+                            bisnis dan kebutuhan VVIP kebutuhan keluaga kebutuhan umum.</p>
+                    </div>
+                    <div
+                        class="glass-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 card-3d reveal">
+                        <h3 class="text-lg font-serif font-bold text-luxury-blue dark:text-white mb-2">Executive Travel
+                            Antar Kota</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Perjalanan antar kota dengan standar premium
+                            dan pengelolaan waktu yang presisi.</p>
+                    </div>
+                    <div
+                        class="glass-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 card-3d reveal">
+                        <h3 class="text-lg font-serif font-bold text-luxury-blue dark:text-white mb-2">Airport Executive
+                            Transfer</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Antar jemput bandara dengan ketepatan waktu
+                            dan kenyamanan maksimal.</p>
+                    </div>
+                    <div
+                        class="glass-card p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 card-3d reveal">
+                        <h3 class="text-lg font-serif font-bold text-luxury-blue dark:text-white mb-2">Corporate
+                            Mobility Solution</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Solusi mobilitas profesional untuk
+                            perusahaan dan institusi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- STANDAR PELAYANAN -->
+        <div class="mt-20 reveal">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-luxury-blue dark:text-white mb-8 text-center">
+                Standar Pelayanan Eksekutif</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-check-circle text-2xl text-luxury-gold mt-1"></i>
+                    <p class="text-lg text-gray-700 dark:text-gray-300">Armada representatif dan terawat</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-check-circle text-2xl text-luxury-gold mt-1"></i>
+                    <p class="text-lg text-gray-700 dark:text-gray-300">Pengemudi profesional, beretika, dan menjaga
+                        kerahasiaan</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-check-circle text-2xl text-luxury-gold mt-1"></i>
+                    <p class="text-lg text-gray-700 dark:text-gray-300">Privasi dan keamanan tingkat tinggi</p>
+                </div>
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-check-circle text-2xl text-luxury-gold mt-1"></i>
+                    <p class="text-lg text-gray-700 dark:text-gray-300">Ketepatan waktu sebagai standar utama</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEARCH BAR -->
+        <div class="container mx-auto px-4 relative z-10 mt-4">
+            <div
+                class="glass-card p-4 rounded-xl shadow-lg flex flex-col md:flex-row gap-4 transition-all duration-300 hover:shadow-xl card-3d border border-white/30 dark:border-gray-700/50">
+                <div class="flex-1">
+                    <label
+                        class="block mb-2 text-xs font-bold text-luxury-blue dark:text-gray-400 uppercase">Dari</label>
+                    <input type="text" id="search-from" placeholder="Indramayu"
+                        class="w-full px-3 py-2 bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-luxury-gold/50 focus:border-luxury-gold outline-none dark:text-white transition-colors duration-300 backdrop-blur-sm">
+                </div>
+                <div class="flex-1">
+                    <label class="block mb-2 text-xs font-bold text-luxury-blue dark:text-gray-400 uppercase">Ke</label>
+                    <input type="text" id="search-to" placeholder="Jakarta"
+                        class="w-full px-3 py-2 bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-luxury-gold/50 focus:border-luxury-gold outline-none dark:text-white transition-colors duration-300 backdrop-blur-sm">
+                </div>
+                <div class="flex-1">
+                    <label
+                        class="block mb-2 text-xs font-bold text-luxury-blue dark:text-gray-400 uppercase">Tanggal</label>
+                    <input type="date"
+                        class="w-full px-3 py-2 bg-white/50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-luxury-gold/50 focus:border-luxury-gold outline-none dark:text-white transition-colors duration-300 backdrop-blur-sm">
+                </div>
+                <button onclick="handleSearch()"
+                    class="bg-luxury-blue dark:bg-luxury-light text-white px-6 py-2 rounded-lg font-bold hover:bg-luxury-light btn-luxury transition-all shadow-md flex items-center justify-center gap-2 mt-auto md:mt-0">
+                    <i class="fas fa-search"></i> Cari
+                </button>
+            </div>
+        </div>
+
+        <!-- SEARCH MODAL -->
+        <div id="searchResultsModal"
+            class="fixed inset-0 z-[100] hidden bg-slate-900/80 backdrop-blur-xl flex flex-col items-center justify-center p-4 transition-all duration-300">
+            <div
+                class="glass-card bg-white/90 dark:bg-gray-800/90 rounded-3xl shadow-2xl w-full max-w-5xl max-h-[90vh] flex flex-col animate-modal-pop relative overflow-hidden border border-white/30 dark:border-gray-700/50 card-3d">
+                <div class="bg-luxury-blue p-6 flex justify-between items-center">
+                    <h3 class="text-2xl font-serif font-bold text-white">Hasil Pencarian</h3>
+                    <button onclick="closeSearchModal()"
+                        class="text-white hover:text-luxury-gold focus:outline-none btn-luxury"><i
+                            class="fas fa-times text-2xl"></i></button>
+                </div>
+                <div class="p-6 overflow-y-auto">
+                    <div id="searchGrid"
+                        class="grid grid-cols-2 sm:gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-4 lg:gap-8 pb-4"></div>
+                    <div id="no-results-msg" class="col-span-full text-center py-10 hidden">
+                        <p class="text-gray-500 dark:text-gray-400">Maaf, tidak ada rute yang sesuai.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- REASONS -->
+        <section id="features" class="py-20 bg-white/30 dark:bg-gray-900/30 relative z-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-luxury-blue dark:text-white mb-4">Kenapa
+                        Memilih Kami?</h2>
+                    <div class="w-20 h-1 bg-luxury-gold mx-auto"></div>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div
+                        class="p-6 rounded-2xl hover:shadow-xl transition-all duration-300 border border-white/50 dark:border-gray-700/50 text-center reveal group perspective-container glass-card">
+                        <div
+                            class="w-20 h-20 bg-blue-50 dark:bg-gray-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-luxury-gold group-hover:text-white transition-all duration-300 shadow-inner card-3d">
+                            <i class="fas fa-route text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Door to Door</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Jemput & antar langsung.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-2xl hover:shadow-xl transition-all duration-300 border border-white/50 dark:border-gray-700/50 text-center reveal group perspective-container glass-card">
+                        <div
+                            class="w-20 h-20 bg-green-50 dark:bg-gray-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-luxury-gold group-hover:text-white transition-all duration-300 shadow-inner card-3d">
+                            <i class="fas fa-couch text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Armada Nyaman</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Armada mewah & full AC.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-2xl hover:shadow-xl transition-all duration-300 border border-white/50 dark:border-gray-700/50 text-center reveal group perspective-container glass-card">
+                        <div
+                            class="w-20 h-20 bg-purple-50 dark:bg-gray-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-luxury-gold group-hover:text-white transition-all duration-300 shadow-inner card-3d">
+                            <i class="fas fa-id-card text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">Driver Berpengalaman
+                        </h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Jadwal terjamin.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-2xl hover:shadow-xl transition-all duration-300 border border-white/50 dark:border-gray-700/50 text-center reveal group perspective-container glass-card">
+                        <div
+                            class="w-20 h-20 bg-yellow-50 dark:bg-gray-700 text-white rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-luxury-gold group-hover:text-white transition-all duration-300 shadow-inner card-3d">
+                            <i class="fas fa-headset text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white mb-2">CS Responsif</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Support 24 Jam.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FLEET SLIDER HORIZONTAL (SCROLL SNAP) -->
+        <section id="fleet" class="py-20 bg-white/30 dark:bg-gray-900/30">
+            <section id="home-routes-slider" class="py-20">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-10">
+                        <div class="text-center md:text-left">
+                            <span class="text-luxury-gold font-bold tracking-widest uppercase text-sm">Destinasi</span>
+                            <h2 class="text-3xl md:text-4xl font-serif font-bold text-luxury-blue dark:text-white">
+                                Armada Kenyamanan</h2>
+                            <div class="w-20 h-1 bg-luxury-gold mx-auto mt-2 mb-4 md:mb-6"></div>
+                            <p class="text-gray-500 dark:text-gray-400">Armada terbaru yang bersih, nyaman, dan modern.
+                            </p>
+                        </div>
+                        <a href="#" onclick="route('routes-page')"
+                            class="bg-luxury-blue text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-luxury-light btn-luxury transition-all hidden md:block">
+                            Lihat Semua Armada
+                        </a>
+                    </div>
+
+                    <!-- SCROLL SNAP CONTAINER (Ganti Track Logic) -->
+                    <div class="fleet-slider-container">
+                        <div class="fleet-track">
+                            <!-- Card 1 -->
+                            <div
+                                class="fleet-card glass-card bg-white/70 dark:bg-gray-800/70 rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-white/30 dark:border-gray-700/50 card-3d">
+                                <div class="h-64 overflow-hidden relative">
+                                    <img src="haice.webp" alt="Armada Mewah 1" loading="lazy" width="600" height="400"
+                                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <div class="px-6 py-4">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white">Luxury
+                                            HiAce </h3>
+                                        <span
+                                            class="bg-green-100 text-green-600 text-xs font-bold px-2 py-1 rounded">Available</span>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center text-gray-600 dark:text-gray-300 text-sm"><i
+                                                class="fas fa-users w-5 text-luxury-blue"></i><span>14 Penumpang</span>
+                                        </div>
+                                        <div class="flex items-center text-gray-600 dark:text-gray-300 text-sm"><i
+                                                class="fas fa-wind w-5 text-luxury-blue"></i><span>AC Double
+                                                Blower</span></div>
+                                        <div class="flex items-center text-gray-600 dark:text-gray-300 text-sm"><i
+                                                class="fas fa-tv w-5 text-luxury-blue"></i><span>Audio/Video
+                                                Premium</span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div
+                                class="fleet-card glass-card bg-white/70 dark:bg-gray-800/70 rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300 border border-white/30 dark:border-gray-700/50 card-3d">
+                                <div class="h-64 overflow-hidden relative">
+                                    <img src="cayla.webp" alt="Armada Mewah 2" loading="lazy" width="600" height="400"
+                                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                </div>
+                                <div class="px-6 py-4">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="text-xl font-serif font-bold text-gray-900 dark:text-white">Toyota
+                                            Cayla</h3>
+                                        <span
+                                            class="bg-green-100 text-green-600 text-xs font-bold px-2 py-1 rounded">Available</span>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <div class="flex items-center text-gray-600 dark:text-gray-300 text-sm"><i
+                                                class="fas fa-users w-5 text-luxury-blue"></i><span>6 Penumpang</span>
+                                        </div>
+                                        <div class="flex items-center text-gray-600 dark:text-gray-300 text-sm"><i
+                                                class="fas fa-wind w-5 text-luxury-blue"></i><span>AC Double USB</span>
+                                        </div>
+                                        <div class="flex items-center text-gray-600 dark:text-gray-300 text-sm"><i
+                                                class="fas fa-tv w-5 text-luxury-blue"></i><span>Seats</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-6 md:hidden">
+                        <a href="#" onclick="route('routes-page')"
+                            class="bg-luxury-blue text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-luxury-light btn-luxury transition-all">
+                            Lihat Semua Armada
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+         <!-- FAQ SECTION -->
+        <section id="faq-section" class="container mx-auto px-4 py-20 relative z-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-luxury-blue dark:text-white mb-4">FAQ Travel Mobil Indramayu Jakarta Bekasi Tangerang Bogor Cikarang Karawang Bandara soekarno hatta</h2>
+                <div class="w-20 h-1 bg-luxury-gold mx-auto"></div>
+                <p class="text-gray-500 dark:text-gray-400">Pertanyaan yang sering diajukan calon penumpang</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden">
+                <div class="divide-y divide-gray-100 dark:divide-gray-700">
+                    
+                    <!-- FAQ Item 1 -->
+                    <div class="group">
+                        <button class="w-full text-left px-6 py-5 focus:outline-none flex items-center justify-between">
+                            <span class="text-lg font-bold text-gray-800 dark:text-white group-hover:text-luxury-gold transition-colors">Berapa harga Travel Mobil Indramayu Jakarta Bekasi Tangerang Bogor Cikarang Karawang Bandara soekarno hatta?</span>
+                            <i class="fas fa-plus text-gray-400 group-hover:text-luxury-gold transition-transform duration-300"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-600 dark:text-gray-400">
+                            <p>Harga mulai Rp150.000 tergantung lokasi jemput.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="group">
+                        <button class="w-full text-left px-6 py-5 focus:outline-none flex items-center justify-between">
+                            <span class="text-lg font-bold text-gray-800 dark:text-white group-hover:text-luxury-gold transition-colors">Apakah tersedia 24 jam?</span>
+                            <i class="fas fa-plus text-gray-400 group-hover:text-luxury-gold transition-transform duration-300"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-600 dark:text-gray-400">
+                            <p>Ya, kami melayani travel 24 jam dengan reservasi.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="group">
+                        <button class="w-full text-left px-6 py-5 focus:outline-none flex items-center justify-between">
+                            <span class="text-lg font-bold text-gray-800 dark:text-white group-hover:text-luxury-gold transition-colors">Apakah door to door?</span>
+                            <i class="fas fa-plus text-gray-400 group-hover:text-luxury-gold transition-transform duration-300"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-600 dark:text-gray-400">
+                            <p>Ya, kami jemput dan antar langsung ke alamat tujuan.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PAGE 2: RUTE PERJALANAN -->
+    <div id="routes-page" class="page-section w-full hidden min-h-screen flex flex-col">
+        <div
+            class="glass-card bg-white/70 dark:bg-gray-900/70 py-8 shadow-sm z-20 backdrop-blur-md border-b border-white/20 dark:border-gray-800">
+            <div class="container mx-auto px-4 text-center">
+                <div class="flex items-center justify-center gap-3 mb-2">
+                    <div
+                        class="w-10 h-10 bg-luxury-gold rounded-full flex items-center justify-center text-white shadow-lg animate-float">
+                        <span class="font-serif font-bold">TR</span>
+                    </div>
+                    <h1 class="text-2xl md:text-3xl font-serif font-bold text-luxury-blue dark:text-white">Daftar Rute
+                    </h1>
+                </div>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Silakan pilih tujuan perjalanan Anda</p>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-8 pb-20 flex-grow max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-luxury-blue dark:text-white mb-4">Jelajahi
+                    Destinasi</h2>
+                <div class="w-20 h-1 bg-luxury-gold mx-auto"></div>
+            </div>
+
+            <!-- VERTICAL GRID (1 Column) -->
+            <div id="routes-grid" class="grid grid-cols-1 gap-6"></div>
+        </div>
+
+        <div class="fixed bottom-4 left-4 z-50">
+            <button onclick="route('home')"
+                class="w-14 h-14 glass-card bg-luxury-blue text-white rounded-full shadow-[0_4px_15px_rgba(15,23,42,0.4)] border-4 border-white/20 flex items-center justify-center hover:bg-luxury-light hover:scale-110 btn-luxury transition-all group relative animate-float">
+                <i class="fas fa-arrow-left text-xl"></i>
+                <span
+                    class="absolute left-16 top-1/2 -translate-y-1/2 bg-gray-800 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Kembali</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- PAGE 3: BOOKING FORM -->
+    <div id="booking-page" class="page-section w-full hidden min-h-screen flex flex-col">
+        <div
+            class="glass-card bg-white/70 dark:bg-gray-900/70 py-8 shadow-sm z-20 backdrop-blur-md border-b border-white/20 dark:border-gray-800">
+            <div class="container mx-auto px-4 text-center">
+                <div class="flex items-center justify-center gap-3 mb-2">
+                    <div
+                        class="w-10 h-10 bg-luxury-gold rounded-full flex items-center justify-center text-white shadow-lg animate-float">
+                        <span class="font-serif font-bold">TR</span>
+                    </div>
+                    <h1 class="text-2xl md:text-3xl font-serif font-bold text-luxury-blue dark:text-white">Formulir
+                        Pemesanan</h1>
+                </div>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Lengkapi data diri Anda di bawah ini</p>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 pt-8 pb-20 flex-grow flex justify-center">
+            <div id="booking"
+                class="w-full max-w-3xl glass-card bg-white/90 dark:bg-gray-800/90 rounded-3xl shadow-2xl border border-white/30 dark:border-gray-700/50 overflow-hidden animate-fade-in-up perspective-container card-3d backdrop-blur-xl">
+                <div class="bg-luxury-blue p-8 md:p-10 text-center">
+                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-white mb-2">Isi Data Pemesanan</h2>
+                    <p class="text-blue-100 text-sm md:text-base">Harga akan terhitung otomatis.</p>
+                </div>
+                <form class="p-6 md:p-12 space-y-5" onsubmit="handleBooking(event)">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label
+                                class="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Nama
+                                Lengkap</label>
+                            <div class="relative group">
+                                <i
+                                    class="fas fa-user absolute left-3 top-3.5 text-gray-400 group-focus-within:text-luxury-gold transition-colors duration-300"></i>
+                                <input type="text" id="name" name="name"
+                                    class="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-luxury-gold/50 focus:border-luxury-gold outline-none dark:text-white transition-colors duration-300 backdrop-blur-sm"
+                                    placeholder="Nama Sesuai KTP" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label
+                                class="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Nomor
+                                WhatsApp</label>
+                            <div class="relative group">
+                                <i
+                                    class="fas fa-phone-alt absolute left-3 top-3.5 text-gray-400 group-focus-within:text-luxury-gold transition-colors duration-300"></i>
+                                <input type="tel" id="phone" name="phone"
+                                    class="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-luxury-gold/50 focus:border-luxury-gold outline-none dark:text-white transition-colors duration-300 backdrop-blur-sm"
+                                    placeholder="0812xxxx" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label
+                            class="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Alamat
+                            Jemput</label>
+                        <div class="relative group">
+                            <i
+                                class="fas fa-map-marker-alt absolute left-3 top-3.5 text-gray-400 group-focus-within:text-luxury-gold transition-colors duration-300"></i>
+                            <input type="text" id="address" name="address"
+                                class="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-luxury-gold/50 focus:border-luxury-gold outline-none dark:text-white transition-colors duration-300 backdrop-blur-sm"
+                                placeholder="Alamat lengkap" required>
+                        </div>
+                    </div>
+                    <div>                        <label
+                            class="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Pilih
+                            Rute</label>
+                        <div class="relative group">
+                            <i
+                                class="fas fa-route absolute left-3 top-3.5 text-gray-400 group-focus-within:text-luxury-gold transition-colors duration-300"></i>
+                            <select id="route" name="route"
+                                class="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-luxury-gold/50 focus:border-luxury-gold outline-none dark:text-white appearance-none transition-colors duration-300 cursor-pointer backdrop-blur-sm"
+                                required onchange="updatePrice()">
+                                <option value="" disabled selected data-price="0">Pilih rute perjalanan...</option>
+                            </select>
+                            <i
+                                class="fas fa-chevron-down absolute right-3 top-3.5 text-gray-400 pointer-events-none"></i>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label
+                                class="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Tanggal</label>
+                            <div class="relative group">
+                                <i
+                                    class="fas fa-calendar-alt absolute left-3 top-3.5 text-gray-400 group-focus-within:text-luxury-gold transition-colors duration-300"></i>
+                                <input type="date" id="travel-date" name="travel_date"
+                                    class="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-luxury-gold/50 focus:border-luxury-gold outline-none dark:text-white transition-colors duration-300 backdrop-blur-sm"
+                                    required>
+                            </div>
+                        </div>
+                        <div>
+                            <label
+                                class="block mb-2 text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">Jumlah
+                                Penumpang</label>
+                            <div class="relative group">
+                                <i
+                                    class="fas fa-users absolute left-3 top-3.5 text-gray-400 group-focus-within:text-luxury-gold transition-colors duration-300"></i>
+                                <input type="number" id="passengers" name="passengers"
+                                    class="w-full pl-10 pr-4 py-3 bg-white/50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-luxury-gold/50 focus:border-luxury-gold outline-none dark:text-white transition-colors duration-300 backdrop-blur-sm"
+                                    min="1" value="1" required onchange="updatePrice()">
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="glass-card bg-gray-50/70 dark:bg-gray-700/70 rounded-lg p-4 flex justify-between items-center border border-white/30 dark:border-gray-600/50 mb-6 transition-all duration-300 hover:shadow-md card-3d">
+                        <span class="text-gray-600 dark:text-gray-300 font-semibold">Estimasi Total:</span>
+                        <span class="text-2xl font-bold text-luxury-blue font-serif dark:text-white" id="total-price">Rp
+                            0</span>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-luxury-gold text-white font-bold py-4 rounded-lg hover:bg-yellow-600 btn-luxury transition-all shadow-lg transform hover:-translate-y-1 flex items-center justify-center gap-2 group">
+                        <i class="fab fa-whatsapp text-xl group-hover:rotate-12 transition-transform duration-300"></i>
+                        Konfirmasi Pesanan
+                    </button>
+                    <p class="text-xs text-center text-gray-400 dark:text-gray-500 mt-2">* Data Anda aman dan akan
+                        diproses langsung ke WhatsApp.</p>
+                </form>
+            </div>
+        </div>
+
+        <div class="fixed bottom-4 left-4 z-50">
+            <button onclick="route('home')"
+                class="w-14 h-14 glass-card bg-luxury-blue text-white rounded-full shadow-[0_4px_15px_rgba(15,23,42,0.4)] border-4 border-white/20 flex items-center justify-center hover:bg-luxury-light hover:scale-110 btn-luxury transition-all group relative animate-float">
+                <i class="fas fa-arrow-left text-xl"></i>
+                <span
+                    class="absolute left-16 top-1/2 -translate-y-1/2 bg-gray-800 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Kembali</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+   <footer class="bg-luxury-blue text-white mt-auto">
+        <div class="container mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-3 gap-12 border-b border-white/10 pb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-luxury-gold">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <span class="text-2xl font-serif font-bold tracking-wide">TRAVEL RIZKY</span>
+                    </div>
+                    <p class="text-blue-100 mb-4 text-sm leading-relaxed max-w-sm">
+                        Platform travel mobil  online terdepan. Kami menjamin kenyamanan, keamanan, dan
+                        kepuasan perjalanan Anda.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-serif font-bold text-white mb-6">Hubungi Kami</h4>
+                    <ul class="space-y-4 text-blue-100 text-sm">
+                        <li class="flex items-start gap-3"><i class="fas fa-envelope mt-1 text-luxury-gold"></i><span>info@rizkytravel.co.id</span></li>
+                        <li class="flex items-start gap-3"><i class="fas fa-map-marker-alt mt-1 text-luxury-gold"></i><span>Blok Kesambi Desa Gabuswetan Kec. Abuswetan Kab. Indramayu</span></li>
+                        <li class="flex items-start gap-3"><i class="fab fa-whatsapp mt-1 text-luxury-gold"></i><a href="https://wa.me/6283893843963" class="hover:text-luxury-gold transition-colors">083893843963 (24 Jam)</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-serif font-bold text-white mb-6">Metode Pembayaran</h4>
+                    <div class="flex gap-4">
+                        <div class="bg-white/10 px-3 py-1 rounded text-sm font-semibold border border-white/20">BCA</div>
+                        <div class="bg-white/10 px-3 py-1 rounded text-sm font-semibold border border-white/20">Mandiri</div>
+                        <div class="bg-white/10 px-3 py-1 rounded text-sm font-semibold border border-white/20">BRI</div>
+                    </div>
+                    <div class="mt-6 flex items-center gap-2 text-xs text-blue-200"><i class="fas fa-lock"></i> Transaksi Terenkripsi & Aman</div>
+                </div>
+            </div>
+
+            <div class="text-center text-blue-200 text-sm border-t border-white/10 pt-8">
+                &copy; <span id="year">2023</span> Travel Rizky Indonesia. All Rights Reserved. Designed with ❤️.
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING CTA -->
+    <div class="fixed bottom-4 right-4 z-40 flex flex-col items-end gap-3">
+        <button onclick="route('routes-page')"
+            class="w-12 h-12 glass-card bg-white text-luxury-blue rounded-full shadow-lg border border-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-600 flex items-center justify-center hover:scale-110 btn-luxury transition-all group relative">
+            <i class="fas fa-route text-xl"></i>
+        </button>
+        <button onclick="route('booking-page')"
+            class="w-16 h-16 glass-card bg-luxury-gold text-white rounded-full shadow-[0_8px_20px_rgba(212,175,55,0.4)] border-4 border-white/20 flex items-center justify-center hover:bg-yellow-500 btn-luxury transition-all group relative animate-float">
+            <i class="fas fa-ticket-alt text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast"
+        style="visibility:hidden; min-width: 250px; background-color: rgba(15, 23, 42, 0.9); backdrop-filter: blur(10px); color: #fff; text-align: center; border-radius: 8px; padding: 16px; position: fixed; z-index: 150; left: 50%; bottom: 50px; transform: translateX(-50%); opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.1);">
+        <i class="fas fa-check-circle"
+            style="color: #d4af37; margin-right: 8px; font-size: 1.2rem; vertical-align: middle;"></i> <span
+            id="toast-msg">Pesan</span>
+    </div>
+
+    <!-- LOGIC SCRIPT (Simplified) -->
+    <script>
+        const pages = ['home', 'routes-page', 'booking-page'];
+
+        function route(pageId) {
+            pages.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+                document.getElementById(id).classList.remove('active-page');
+            });
+            const target = document.getElementById(pageId);
+            if (target) {
+                target.classList.remove('hidden');
+                target.classList.add('active-page');
+            }
+            window.location.hash = pageId;
+            window.scrollTo(0, 0);
+        }
+
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && pages.includes(hash)) route(hash);
+        });
+
+        const routesDB = [
+            { name: "Indramayu - Jakarta", price: 250000, img: "jakarta.webp", duration: "4 Jam", rating: 4.8 },
+            { name: "Indramayu - Bekasi", price: 200000, img: "bekasi.webp", duration: "3.5 Jam", rating: 4.7 },
+            { name: "Indramayu - Tangerang", price: 250000, img: "tangerang.webp", duration: "5 Jam", rating: 4.8 },
+            { name: "Indramayu - Bogor", price: 250000, img: "bogor.webp", duration: "5 Jam", rating: 4.8 },
+            { name: "Indramayu - Cikarang", price: 200000, img: "cikarang.webp", duration: "4 Jam", rating: 4.7 },
+            { name: "Indramayu - Karawang", price: 200000, img: "karawang.webp", duration: "3.5 Jam", rating: 4.6 },
+            { name: "Indramayu - Bandara Soetta", price: 350000, img: "bandara.webp", duration: "5 Jam", rating: 4.9 },
+            { name: "Jakarta - Indramayu", price: 250000, img: "jakarta.webp", duration: "4 Jam", rating: 4.8 },
+            { name: "Bekasi - Indramayu", price: 200000, img: "bekasi.webp", duration: "4 Jam", rating: 4.7 },
+            { name: "Tangerang - Indramayu", price: 250000, img: "tangerang.webp", duration: "5 Jam", rating: 4.8 },
+            { name: "Cikarang - Indramayu", price: 200000, img: "cikarang.webp", duration: "4 Jam", rating: 4.7 },
+            { name: "Karawang - Indramayu", price: 200000, img: "karawang.webp", duration: "3.5 Jam", rating: 4.6 },
+            { name: "Bandara Soetta - Indramayu", price: 350000, img: "bandara.webp", duration: "5 Jam", rating: 4.9 },
+            { name: "Bogor - Indramayu", price: 250000, img: "bogor.webp", duration: "5 Jam", rating: 4.8 }
+        ];
+
+        const routesGrid = document.getElementById('routes-grid');
+        if (routesGrid) {
+            routesDB.forEach(route => {
+                const cardHTML = `
+                    <div onclick="fillBooking(\`${route.name}\`, ${route.price})" class="group glass-card bg-white/70 dark:bg-gray-800/70 rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer reveal flex flex-col sm:flex-row h-auto sm:h-48 card-3d border border-white/30 dark:border-gray-700/50">
+                        <div class="w-full sm:w-48 h-48 sm:h-full overflow-hidden relative flex-shrink-0">
+                            <img src="${route.img}" alt="${route.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300"></div>
+                            <span class="absolute bottom-2 left-2 bg-white/95 dark:bg-black/80 text-luxury-gold text-xs font-bold px-2 py-1 rounded shadow-sm backdrop-blur-sm">Rp ${route.price / 1000}rb</span>
+                        </div>
+                        <div class="p-4 md:p-6 flex flex-col justify-center flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg md:text-2xl font-serif font-bold text-gray-900 dark:text-white group-hover:text-luxury-gold transition-colors duration-300">${route.name}</h3>
+                            </div>
+                            <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                                <span class="flex items-center gap-1"><i class="fas fa-clock text-luxury-blue dark:text-luxury-gold"></i> ${route.duration}</span>
+                                <span class="flex items-center gap-1"><i class="fas fa-star text-yellow-400"></i> ${route.rating}</span>
+                            </div>
+                            <div class="mt-auto flex items-center justify-between">
+                                <span class="text-xs text-gray-400">Layanan Door to Door</span>
+                                <span class="text-luxury-blue dark:text-white text-sm font-semibold flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-300">Pesan Tiket <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                routesGrid.insertAdjacentHTML('beforeend', cardHTML);
+            });
+        }
+
+        const routeSelect = document.getElementById('route');
+        if (routeSelect) {
+            routesDB.forEach(route => {
+                const option = document.createElement('option');
+                option.value = route.name;
+                option.text = route.name;
+                option.setAttribute('data-price', route.price);
+                routeSelect.appendChild(option);
+            });
+        }
+
+        /* FAQ LOGIC */
+        const faqItems = document.querySelectorAll('#faq-section .group');
+        faqItems.forEach(item => {
+            const button = item.querySelector('button');
+            const answer = item.querySelector('div');
+            const icon = item.querySelector('i');
+            if (button) {
+                button.addEventListener('click', () => {
+                    if (icon.classList.contains('fa-plus')) {
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                    } else {
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                    }
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                });
+            }
+        });
+
+        /* SLIDER LOGIC */
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        let slideInterval;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function changeSlide(index) {
+            showSlide(index);
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+        slideInterval = setInterval(nextSlide, 5000);
+
+        /* SCROLL REVEAL */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        /* SCROLL PROGRESS */
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + "%";
+        });
+
+        /* NAVBAR LOGIC */
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg', 'py-2');
+                navbar.classList.remove('py-4', 'shadow-sm');
+            } else {
+                navbar.classList.add('py-4', 'shadow-sm');
+                navbar.classList.remove('py-2', 'shadow-lg');
+            }
+        });
+
+        /* FORM LOGIC */
+        function updatePrice(externalPrice = null) {
+            const routeSelect = document.getElementById('route');
+            const passengersInput = document.getElementById('passengers');
+            const totalPriceEl = document.getElementById('total-price');
+            let pricePerTicket = externalPrice;
+            if (!pricePerTicket) {
+                const selectedIndex = routeSelect.selectedIndex;
+                if (selectedIndex >= 0) pricePerTicket = parseFloat(routeSelect.options[selectedIndex].getAttribute('data-price')) || 0;
+                else pricePerTicket = 0;
+            }
+            const quantity = parseInt(passengersInput.value) || 1;
+            if (pricePerTicket > 0) {
+                totalPriceEl.innerText = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(pricePerTicket * quantity);
+            } else {
+                totalPriceEl.innerText = "Rp 0";
+            }
+        }
+
+        function handleBooking(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const route = document.getElementById('route').value;
+            const date = document.getElementById('travel-date').value;
+            const passengers = document.getElementById('passengers').value;
+            const totalText = document.getElementById('total-price').innerText;
+
+            if (!name || !phone || !address || !route || !date) {
+                showToast("Mohon lengkapi semua data!", "error");
+                return;
+            }
+            const selectedDate = new Date(date);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            if (selectedDate < today) {
+                showToast("Tanggal tidak valid!", "error");
+                return;
+            }
+
+            showToast("Mengarahkan ke WhatsApp...", "success");
+            const message = `Halo Admin Travel Rizky,\n\nSaya ingin memesan tiket:\nNama: ${name}\nNo HP: ${phone}\nAlamat: ${address}\nRute: ${route}\nTanggal: ${date}\nJumlah: ${passengers} Penumpang\nTotal: ${totalText}`;
+            window.open(`https://wa.me/6283893843963?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        function fillBooking(routeName, price) {
+            route('booking-page');
+            setTimeout(() => {
+                const routeSelect = document.getElementById('route');
+                routeSelect.value = routeName;
+                updatePrice(price);
+                setTimeout(() => document.getElementById('name').focus(), 300);
+            }, 300);
+        }
+
+        function handleSearch() {
+            const fromInput = document.getElementById('search-from').value.trim().toLowerCase();
+            const toInput = document.getElementById('search-to').value.trim().toLowerCase();
+            const searchResultsModal = document.getElementById('searchResultsModal');
+            const searchGrid = document.getElementById('searchGrid');
+            const noResultsMsg = document.getElementById('no-results-msg');
+
+            searchGrid.innerHTML = '';
+            noResultsMsg.classList.add('hidden');
+
+            if (!fromInput || !toInput) {
+                showToast("Isi kolom Dari dan Ke!", "error");
+                return;
+            }
+
+            let exactMatch = routesDB.find(r => r.name.toLowerCase() === (fromInput + " - " + toInput));
+            if (!exactMatch) exactMatch = routesDB.find(r => r.name.toLowerCase() === (toInput + " - " + fromInput));
+
+            let matches = exactMatch ? [exactMatch] : routesDB.filter(route => route.name.toLowerCase().includes(fromInput) && route.name.toLowerCase().includes(toInput));
+
+            if (matches.length > 0) {
+                matches.forEach(route => {
+                    const cardHTML = `
+                        <div onclick="fillBooking(\`${route.name}\`, ${route.price}); closeSearchModal()" class="group glass-card bg-white/70 dark:bg-gray-800/70 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer mb-4 card-3d border border-white/30 dark:border-gray-700/50">
+                            <div class="h-48 overflow-hidden relative rounded-t-xl">
+                                <img src="${route.img}" alt="${route.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black/50 to-transparent rounded-b-xl"></div>
+                                <span class="absolute top-2 right-2 bg-white/90 text-luxury-gold text-[10px] font-bold px-2 py-0.5 rounded shadow-sm backdrop-blur-sm">Rp ${route.price / 1000}rb</span>
+                            </div>
+                            <div class="p-4">
+                                <h4 class="text-lg font-serif font-bold text-gray-900 dark:text-white mb-1 group-hover:text-luxury-gold transition-colors duration-300">${route.name}</h4>
+                                <div class="flex items-center text-gray-500 dark:text-gray-400 text-xs space-x-2">
+                                    <span><i class="fas fa-clock text-luxury-gold"></i> ${route.duration}</span>
+                                    <span><i class="fas fa-star text-yellow-400"></i> ${route.rating}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    searchGrid.insertAdjacentHTML('beforeend', cardHTML);
+                });
+                searchResultsModal.classList.remove('hidden');
+            } else {
+                searchResultsModal.classList.remove('hidden');
+                noResultsMsg.classList.remove('hidden');
+            }
+        }
+
+        function closeSearchModal() {
+            document.getElementById('searchResultsModal').classList.add('hidden');
+        }
+
+        /* MOBILE MENU LOGIC */
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('is-open');
+        }
+
+        /* DARK MODE TOGGLE */
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.classList.toggle('dark');
+            const icons = document.querySelectorAll('#theme-icon, #theme-icon-mobile');
+            icons.forEach(icon => icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            document.getElementById('theme-icon').className = 'fas fa-sun';
+            document.getElementById('theme-icon-mobile').className = 'fas fa-sun';
+        }
+
+        /* CLOCK & GREETING */
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').innerText = `${hours}:${minutes}:${seconds}`;
+            const currentHour = now.getHours();
+            document.getElementById('greeting-text').innerText = (currentHour >= 4 && currentHour < 12) ? "Selamat Pagi" : (currentHour >= 12 && currentHour < 18) ? "Selamat Siang" : "Selamat Malam";
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        /* TOAST & THEME */
+        function showToast(message, type) {
+            const toast = document.getElementById("toast");
+            const icon = type === "error" ? "fa-exclamation-circle" : "fa-check-circle";
+            const color = type === "error" ? "#ef4444" : "#10b981";
+            toast.innerHTML = `<i class="fas ${icon}" style="color:${color};"></i> <span>${message}</span>`;
+            toast.style.visibility = "visible";
+            toast.style.opacity = "1";
+            toast.style.bottom = "70px";
+            setTimeout(() => {
+                toast.style.visibility = "hidden";
+                toast.style.opacity = "0";
+                toast.style.bottom = "50px";
+            }, 3000);
+        }
+
+        /* INITIALIZATION */
+        const today = new Date().toISOString().split('T')[0];
+        document.querySelectorAll('input[type="date"]').forEach(input => input.setAttribute('min', today));
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && pages.includes(hash)) route(hash);
+            else route('home');
+        });
+    </script>
+</body>
+
+</html>
